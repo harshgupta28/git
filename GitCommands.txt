@@ -1,0 +1,111 @@
+NOTE - All the strings in the big bracket(including big bracket) should be omitted with the suitable strings.
+NOTE - file_name must include file extension 
+
+git --version						check git version
+git config --global user.name [username]		set username globally
+git config --global user.email [email]			set email globally
+git config user.name [username]				set username in current project
+git config user.email [email]				shows email in current project
+git config --global user.name 				shows global username 
+git config --global user.email 				shows global email 
+git config user.name 					shows username of current project  
+git config user.email 					shows email of current project  
+
+git status						check status (untracked / staging area / commited )
+git status -s 						shows status summary (green M - staging, red M - working tree) M- modify
+git init						initialize repo as git repo by making .git folder
+
+ls 							list files and folders in directory
+ls - 							list files and folders in directory and something more
+code .							opens vs code
+touch [file_name]					creates file_name file 
+touch .gitignore					creates .gitignore file used for ignoring data (hidden folder)
+git log							shows all commits including who commited it. Press q for exit.
+git log -p -[no_of_commits]				shows last n commits including who commited it (n = no_of_commits). Press q for exit.
+clear							clears screen
+
+git remote add origin [URL]				add remote URL(e.g - github repo SSH  / URL) to origin
+git remote show origin					shows info about origin
+git remote						shows remote URL 
+git remote -v 						shows fetch and push URL
+git remote set-url origin [URL]				sets new url
+
+git add [file_name]					staging (add file file_name to staging area)
+git add - A 						stages all files 
+git add .						stages new and modified file 
+git add - u 						stages modified and deleted w/o new file  
+git commit 						commits staged files by inputing message. Press (esc -> : -> w -> q -> enter) for exit
+git commit - m "[message]"				commits staged files by displaying message
+git commit - a - m "[messsage]"				commits all staged files and skips staging area
+
+git push -u origin master				push working tree(changes) to master branch of origin 
+git push -u [origin or URL] [branch_name]		push working tree(changes) to branch_name of URL
+git push						push changes to previously mentioned URL(default = origin)and  branch_name(default = master)
+git pull origin master					pull changes from master branch of origin 
+git pull [origin or URL] [branch_name]			pull changes from branch_name of URL
+git pull						push changes from previously mentioned URL(default = origin)and  branch_name(default = master)
+
+git reset [file_name]					unstaging a file
+git checkout [file_name]				file will rollback to its last commit
+git checkout -f 					all files will rollback to their last commit
+
+git clone [URL]						clone remote repo to folder named same as repo in working directory(git makes that folder)
+git clone [URL] .					clone remote repo directly to working directory
+git clone [URL] [folder_name]				clone remote repo to folder named folder_name in working directory(git makes that folder)
+
+git diff						shows difference between working tree and staging area
+git diff [file_name]					shows difference between working tree and staging area for file_name file
+git diff --staged					shows difference between last commit and staging area
+git rm --cached [file_name]				remove file_name file from staging area
+
+git rm [file_name]					remove file_name file from staging area and hard disk
+git branch [branch_name]				creates branch branch_name in working directory
+git branch_name						shows branch in woking directory
+git checkout [branch_name]				switches to branch_name branch
+git checkout -b [branch_name]				creates and switches to branch branch_name
+git merge [branch name]					merge branch_name branch with current branch
+git branch -d [branch_name]				deleting branch from git
+git push origin -d [branch_name]			deleting branch from remote repo (e.g. - github)
+
+
+
+
+
+
+
+
+       (red)						 (green)
+	             add file(s) to staging area     
+     UNTRACKED  --------------------------------------->  STAGED  <-------------------------
+		 /\		   			     |		  	 	   |
+		/  \					     |		    	   	   |
+		 |	                                     |          	    	   |         
+		 |	                                     |   	            	   |
+		 |	                                     | 		    	   	   |
+		 |	                                     |		    	   	   |
+		 |	                                     |		    	           | stage the file
+		 |                                           |	    	                   |
+		 |                                           |		    	           |
+		 |					     |	    	   	           |
+		 |			   		   \  /		    	           |
+		 |					    \/ 	  edit	    	           |
+		 -----------------------------------  UNMODIFIED  ------------------->  MODIFIED
+			      					   
+			      	 		   git record's changes
+
+
+
+
+
+--------------------------------------------------------------    DESCRIPTION     -----------------------------------------------------------
+
+
+.git ignore - write name of file and folder for ignoring them 
+	      for ignoring all files named file_name - file_name or give path for particular file
+	      for ignoring folder use - folder_name/
+	      for ignoring all files of similar extension - *.ext
+
+
+
+
+		
